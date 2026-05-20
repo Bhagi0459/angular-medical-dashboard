@@ -1,0 +1,18 @@
+.dashboard-page {
+  padding: 24px;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  color: #111827;
+}
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}

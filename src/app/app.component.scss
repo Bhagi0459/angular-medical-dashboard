@@ -1,8 +1,11 @@
-.app-container {
-  padding: 40px;
-  font-family: Arial, sans-serif;
+.layout-container {
+  display: flex;
 }
 
-h1 {
-  color: #1976d2;
+.page-content {
+  flex: 1;
+
+  min-height: calc(100vh - 70px);
+
+  background-color: #f9fafb;
 }
