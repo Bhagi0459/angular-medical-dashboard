@@ -1,29 +1,14 @@
 <div class="dashboard-page">
-
   <h1>Medical Dashboard</h1>
 
+  <button class="update-btn" (click)="dashboardService.increasePatientCount()">
+
+    Update Patient Count
+
+  </button>
   <div class="stats-grid">
-
-    <app-stat-card
-      title="Total Patients"
-      value="1,245">
-    </app-stat-card>
-
-    <app-stat-card
-      title="Active Reports"
-      value="328">
-    </app-stat-card>
-
-    <app-stat-card
-      title="Appointments"
-      value="89">
-    </app-stat-card>
-
-    <app-stat-card
-      title="Critical Cases"
-      value="14">
-    </app-stat-card>
-
+    @for (stat of dashboardService.dashboardStats(); track stat.title) {
+    <app-stat-card [title]="stat.title" [value]="stat.value"> </app-stat-card>
+    }
   </div>
-
 </div>
