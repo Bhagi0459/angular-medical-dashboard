@@ -9,12 +9,91 @@ h1 {
   color: #111827;
 }
 
+.skeleton-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.skeleton-card {
+  background-color: white;
+
+  padding: 24px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-title,
+.skeleton-value {
+  border-radius: 6px;
+
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 16px;
+
+  margin-bottom: 20px;
+
+  background-color: #e5e7eb;
+}
+
+.skeleton-value {
+  width: 40%;
+  height: 32px;
+
+  background-color: #d1d5db;
+}
+
+@keyframes pulse {
+
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+
+}
+
 .stats-grid {
   display: grid;
 
   grid-template-columns: repeat(4, 1fr);
 
   gap: 20px;
+}
+
+@media (max-width: 1024px) {
+
+  .stats-grid,
+  .skeleton-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .stats-grid,
+  .skeleton-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
 }
 
 .update-btn {

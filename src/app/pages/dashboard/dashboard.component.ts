@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StatCardComponent } from '../../shared/components/stat-card/stat-card.component';
 import { DashboardService } from '../../services/dashboard.service';
+import { DashboardStat } from '../../models/dashboard-stat.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ import { DashboardService } from '../../services/dashboard.service';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  dashboardStats: any[] = [];
+  dashboardStats: DashboardStat[] = [];
 
   constructor(public dashboardService: DashboardService) {}
 }
