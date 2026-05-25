@@ -1,9 +1,9 @@
 <div class="chart-card">
 
-    <h2>Patient Trends</h2>
+    <h2>{{ title }}</h2>
 
-    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-        [stroke]="chartOptions.stroke">
+    <apx-chart [series]="chartSeries" [chart]="chart" [xaxis]="{ categories: categories }" [stroke]="stroke"
+        [colors]="[color]">
     </apx-chart>
 
 </div>

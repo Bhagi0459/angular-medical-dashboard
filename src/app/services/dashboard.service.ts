@@ -13,6 +13,16 @@ export class DashboardService {
     categories: [],
   });
 
+  revenueChartData = signal<ChartData>({
+    series: [],
+    categories: [],
+  });
+
+  criticalCasesChartData = signal<ChartData>({
+    series: [],
+    categories: [],
+  });
+
   isLoading = signal(true);
 
   constructor() {
@@ -38,6 +48,16 @@ export class DashboardService {
 
       this.patientChartData.set({
         series: [120, 150, 170, 140, 190, 220],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      });
+
+      this.revenueChartData.set({
+        series: [40, 55, 65, 80, 95, 120],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      });
+
+      this.criticalCasesChartData.set({
+        series: [12, 18, 10, 15, 8, 6],
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
       });
 

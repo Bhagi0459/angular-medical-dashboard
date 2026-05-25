@@ -20,8 +20,20 @@
     }
   </div>
   <app-patient-chart [series]="dashboardService.patientChartData().series"
-    [categories]="dashboardService.patientChartData().categories">
+    [categories]="dashboardService.patientChartData().categories" color="#1976d2">
   </app-patient-chart>
+
+  <div class="charts-grid">
+
+    <app-patient-chart title="Revenue Trends" [series]="dashboardService.revenueChartData().series"
+      [categories]="dashboardService.revenueChartData().categories" color="#16a34a">
+    </app-patient-chart>
+
+    <app-patient-chart title="Critical Cases" [series]="dashboardService.criticalCasesChartData().series"
+      [categories]="dashboardService.criticalCasesChartData().categories" color="#dc2626">
+    </app-patient-chart>
+
+  </div>
   }
 
 </div>

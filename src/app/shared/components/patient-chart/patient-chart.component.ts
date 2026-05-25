@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
+
 import {
   ApexAxisChartSeries,
   ApexChart,
   ApexXAxis,
+  ApexStroke,
   NgApexchartsModule,
 } from 'ng-apexcharts';
 
@@ -13,36 +15,36 @@ import {
   styleUrl: './patient-chart.component.scss',
 })
 export class PatientChartComponent {
+  @Input() title: string = '';
+
   @Input() series: number[] = [];
 
   @Input() categories: string[] = [];
 
-  chartOptions: any = {};
+  @Input() color: string = '#1976d2';
 
-  ngOnInit() {
-    this.chartOptions = {
-      series: [
-        {
-          name: 'Patients',
-          data: this.series,
-        },
-      ],
-
-      chart: {
-        type: 'line',
-        height: 350,
-        toolbar: {
-          show: false,
-        },
+  get chartSeries(): ApexAxisChartSeries {
+    return [
+      {
+        name: this.title,
+        data: this.series,
       },
-
-      stroke: {
-        curve: 'smooth',
-      },
-
-      xaxis: {
-        categories: this.categories,
-      },
-    };
+    ];
   }
+
+  chart: ApexChart = {
+    type: 'line',
+    height: 350,
+    toolbar: {
+      show: false,
+    },
+  };
+
+  stroke: ApexStroke = {
+    curve: 'smooth',
+  };
+
+  xaxis: ApexXAxis = {
+    categories: [],
+  };
 }
