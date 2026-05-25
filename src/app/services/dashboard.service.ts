@@ -1,11 +1,17 @@
 import { Injectable, signal } from '@angular/core';
 import { DashboardStat } from '../models/dashboard-stat.model';
+import { ChartData } from '../models/chart-data.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DashboardService {
   dashboardStats = signal<DashboardStat[]>([]);
+
+  patientChartData = signal<ChartData>({
+    series: [],
+    categories: [],
+  });
 
   isLoading = signal(true);
 
@@ -29,6 +35,11 @@ export class DashboardService {
           value: '14',
         },
       ]);
+
+      this.patientChartData.set({
+        series: [120, 150, 170, 140, 190, 220],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      });
 
       this.isLoading.set(false);
     }, 3000);

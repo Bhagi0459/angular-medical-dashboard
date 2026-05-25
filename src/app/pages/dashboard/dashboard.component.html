@@ -1,44 +1,27 @@
 <div class="dashboard-page">
-
   <h1>Medical Dashboard</h1>
-
   @if (dashboardService.isLoading()) {
-
   <div class="skeleton-grid">
-
     @for (item of [1, 2, 3, 4]; track item) {
-
     <div class="skeleton-card">
-
       <div class="skeleton-title"></div>
-
       <div class="skeleton-value"></div>
-
     </div>
-
     }
-
   </div>
-
   } @else {
-
   <button class="update-btn" (click)="dashboardService.increasePatientCount()">
-
     Update Patient Count
-
   </button>
-
   <div class="stats-grid">
-
     @for (stat of dashboardService.dashboardStats(); track stat.title) {
-
     <app-stat-card [title]="stat.title" [value]="stat.value">
     </app-stat-card>
-
     }
-
   </div>
-
+  <app-patient-chart [series]="dashboardService.patientChartData().series"
+    [categories]="dashboardService.patientChartData().categories">
+  </app-patient-chart>
   }
 
 </div>
