@@ -1,0 +1,33 @@
+.summary-card {
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background-color: white;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h3 {
+    margin-top: 0;
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+
+    color: #6b7280;
+}
+
+.summary-value {
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.up .summary-value {
+    color: #16a34a;
+}
+
+.down .summary-value {
+    color: #dc2626;
+}

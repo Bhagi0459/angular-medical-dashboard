@@ -1,6 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { DashboardStat } from '../models/dashboard-stat.model';
 import { ChartData } from '../models/chart-data.model';
+import { AnalyticsSummary } from '../models/analytics-summary.model';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +23,8 @@ export class DashboardService {
     series: [],
     categories: [],
   });
+
+  analyticsSummary = signal<AnalyticsSummary[]>([]);
 
   isLoading = signal(true);
 
@@ -60,6 +63,24 @@ export class DashboardService {
         series: [12, 18, 10, 15, 8, 6],
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
       });
+
+      this.analyticsSummary.set([
+        {
+          title: 'Revenue Growth',
+          percentage: 18,
+          trend: 'up',
+        },
+        {
+          title: 'Critical Cases',
+          percentage: 12,
+          trend: 'down',
+        },
+        {
+          title: 'Appointment Rate',
+          percentage: 24,
+          trend: 'up',
+        },
+      ]);
 
       this.isLoading.set(false);
     }, 3000);

@@ -1,0 +1,21 @@
+<div class="summary-card" [class.up]="trend === 'up'" [class.down]="trend === 'down'">
+
+    <h3>{{ title }}</h3>
+
+    <div class="summary-value">
+
+        @if (trend === 'up') {
+
+        <span>↑</span>
+
+        } @else {
+
+        <span>↓</span>
+
+        }
+
+        {{ percentage }}%
+
+    </div>
+
+</div>

@@ -19,6 +19,19 @@
     </app-stat-card>
     }
   </div>
+  <div class="summary-grid">
+
+    @for (
+    item of dashboardService.analyticsSummary();
+    track item.title
+    ) {
+
+    <app-analytics-summary-card [title]="item.title" [percentage]="item.percentage" [trend]="item.trend">
+    </app-analytics-summary-card>
+
+    }
+
+  </div>
   <app-patient-chart [series]="dashboardService.patientChartData().series"
     [categories]="dashboardService.patientChartData().categories" color="#1976d2">
   </app-patient-chart>

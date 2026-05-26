@@ -3,10 +3,11 @@ import { StatCardComponent } from '../../shared/components/stat-card/stat-card.c
 import { DashboardService } from '../../services/dashboard.service';
 import { DashboardStat } from '../../models/dashboard-stat.model';
 import { PatientChartComponent } from '../../shared/components/patient-chart/patient-chart.component';
+import { AnalyticsSummaryCardComponent } from '../../shared/components/analytics-summary-card/analytics-summary-card.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [StatCardComponent, PatientChartComponent],
+  imports: [StatCardComponent, PatientChartComponent, AnalyticsSummaryCardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
